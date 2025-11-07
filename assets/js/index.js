@@ -43,10 +43,14 @@ const itemCount = (itemsArray) => {
  * @param {object} orderObj 
  */
 const displayOrderDetails = (orderObj) => {
+  // Log initial message
   console.log(`See your order details below:`);
+  // Loop through object
   for (flavor in orderObj) {
+    // Assign key names and flavor count to variables
     const flavorName = flavor;
     const numOfFlavor = orderObj[flavor];
+    // Log current flavor and count
     console.log(`${flavorName}:  ${numOfFlavor}`);
   }
 }
