@@ -29,24 +29,14 @@ const itemCount = (itemsArray) => {
     }
     // If not empty, check keys and values
     else {
-      const isCurrentFlavor = keyChecker(orderItems, currentFlavor);
+      const isCurrentFlavor = keyChecker(orderCount, currentFlavor);
 
       if (isCurrentFlavor === true) {
         let currentFlavorCount = orderCount[currentFlavor];
         currentFlavorCount += 1;
         orderCount[currentFlavor] = currentFlavorCount;
-      }
-      // Loop through the keys
-      for (item in orderCount) {
-        // Check if the current item in array matches a key
-        // If it does, increase value for that key
-        if (currentFlavor === item) {
-          
-        }
-        // If item does not match, create new key and set value to 1
-        else {
-          orderCount[currentFlavor] = 1;
-        }
+      } else {
+        orderCount[currentFlavor] = 1;
       }
     }
   }
