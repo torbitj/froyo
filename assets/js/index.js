@@ -1,8 +1,3 @@
-// Take user order through prompt
-const order = prompt(`What flavors of ice cream would you like to order?`);
-// Turn prompt into an array
-const orderItems = order.split(`,`);
-
 const itemCount = (itemsArray) => {
   const orderCount = {};
 
@@ -34,4 +29,15 @@ const displayOrderDetails = (orderObj) => {
     const numOfFlavor = orderObj[flavor];
     console.log(`${flavorName}:  ${numOfFlavor}`);
   }
+}
+
+const main = () => {
+  // Take user order through prompt
+  const order = prompt(`What flavors of ice cream would you like to order?`);
+  // Turn prompt into an array
+  const orderItems = order.split(`,`);
+  // Turn input into object with item counts as values
+  const orderObject = itemCount(orderItems);
+
+  displayOrderDetails(orderObject);
 }
