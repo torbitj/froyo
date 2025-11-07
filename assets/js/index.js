@@ -1,12 +1,12 @@
 const keyChecker = (object, keyRef) => {
-  let foundKey = false;
+  let isKey = false;
   for (key in object) {
     if (key === keyRef) {
-      foundKey = true;
-      return foundKey;
+      isKey = true;
+      return isKey;
     }
   }
-  return foundKey;
+  return isKey;
 }
 
 /**
@@ -29,6 +29,7 @@ const itemCount = (itemsArray) => {
     }
     // If not empty, check keys and values
     else {
+      const isCurrentFlavor = keyChecker(orderItems, currentItem);
       // Loop through the keys
       for (item in orderCount) {
         // Check if the current item in array matches a key
