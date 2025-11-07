@@ -27,3 +27,6 @@ const itemCount = (itemsArray) => {
   return orderCount;
 }
 
+const displayOrderDetails = (orderObj) => {
+  
+}
