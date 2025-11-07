@@ -38,7 +38,7 @@ const main = () => {
   const orderItems = order.split(`,`);
   // Turn input into object with item counts as values
   const orderObject = itemCount(orderItems);
-
+  // Display order details in the console
   displayOrderDetails(orderObject);
 }
 
