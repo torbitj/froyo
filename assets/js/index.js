@@ -5,26 +5,36 @@
  * @returns Object
  */
 const itemCount = (itemsArray) => {
+  // Create an empty object
   const orderCount = {};
 
+  // Loop through the array
   for (let i = 0; i < itemsArray.length; i++) {
+    // Store current item in array
     const currentItem = itemsArray[i];
+    // Determine if the object is empty
     if (Object.keys(orderCount).length === 0) {
       orderCount[currentItem] = 1;
     }
+    // If not empty, check keys and values
     else {
+      // Loop through the keys
       for (item in orderCount) {
+        // Check if the current item in array matches a key
+        // If it does, increase value for that key
         if (currentItem === item) {
           let currentItemCount = orderCount[item];
           currentItemCount += 1;
           orderCount[item] = currentItemCount;
         }
+        // If item does not match, create new key and set value to 1
         else {
           orderCount[currentItem] = 1;
         }
       }
     }
   }
+  // Return the order object
   return orderCount;
 }
 
