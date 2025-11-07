@@ -1,7 +1,7 @@
 /**
  * Take in an array, count like names and create object of
  * names as keys and values as the counts
- * @param {Array} itemsArray 
+ * @param {array} itemsArray 
  * @returns Object
  */
 const itemCount = (itemsArray) => {
@@ -38,6 +38,10 @@ const itemCount = (itemsArray) => {
   return orderCount;
 }
 
+/**
+ * Display order details of an order objext
+ * @param {object} orderObj 
+ */
 const displayOrderDetails = (orderObj) => {
   console.log(`See your order details below:`);
   for (flavor in orderObj) {
