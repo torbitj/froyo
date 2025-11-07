@@ -27,4 +27,3 @@ const itemCount = (itemsArray) => {
   return orderCount;
 }
 
-console.log(itemCount(orderItems));
