@@ -1,3 +1,9 @@
+/**
+ * Check if key already exists in an object
+ * @param {object} object 
+ * @param {string} keyRef 
+ * @returns 
+ */
 const keyChecker = (object, keyRef) => {
   let isKey = false;
   for (key in object) {
@@ -29,8 +35,10 @@ const itemCount = (itemsArray) => {
     }
     // If not empty, check keys and values
     else {
+      // Check if current flavor is already a key
       const isCurrentFlavor = keyChecker(orderCount, currentFlavor);
-
+      // Increase flavor value if already a key or create new key value
+      // pairing in the object
       if (isCurrentFlavor === true) {
         let currentFlavorCount = orderCount[currentFlavor];
         currentFlavorCount += 1;
