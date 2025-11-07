@@ -8,14 +8,23 @@ const itemCount = (itemsArray) => {
 
   for (let i = 0; i < itemsArray.length; i++) {
     const currentItem = itemsArray[i];
-    for (item in orderCount) {
-      if (currentItem === item) {
-        orderCount[item] += 1;
-      }
-      else {
-        orderCount.item = 0;
+    if (Object.keys(orderCount).length === 0) {
+      orderCount[currentItem] = 1;
+    }
+    else {
+      for (item in orderCount) {
+        if (currentItem === item) {
+          let currentItemCount = orderCount[item];
+          currentItemCount += 1;
+          orderCount[item] = currentItemCount;
+        }
+        else {
+          orderCount[currentItem] = 1;
+        }
       }
     }
   }
-  
+  return orderCount;
 }
+
+console.log(itemCount(orderItems));
