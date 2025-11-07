@@ -4,5 +4,9 @@ const order = prompt(`What flavors of ice cream would you like to order?`);
 const orderItems = order.split(`,`);
 
 const itemCount = (itemsArray) => {
-  
+  const orderCount = {};
+
+  for (let i = 0; i < itemsArray.length; i++) {
+    
+  }
 }
