@@ -1,3 +1,14 @@
+const keyChecker = (object, keyRef) => {
+  let foundKey = false;
+  for (key in object) {
+    if (key === keyRef) {
+      foundKey = true;
+      return foundKey;
+    }
+  }
+  return foundKey;
+}
+
 /**
  * Take in an array, count like names and create object of
  * names as keys and values as the counts
