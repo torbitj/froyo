@@ -27,3 +27,11 @@ const itemCount = (itemsArray) => {
   return orderCount;
 }
 
+const displayOrderDetails = (orderObj) => {
+  console.log(`See your order details below:`);
+  for (flavor in orderObj) {
+    const flavorName = flavor;
+    const numOfFlavor = orderObj[flavor];
+    console.log(`${flavorName}:  ${numOfFlavor}`);
+  }
+}
