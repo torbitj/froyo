@@ -1,3 +1,9 @@
+/**
+ * Take in an array, count like names and create object of
+ * names as keys and values as the counts
+ * @param {Array} itemsArray 
+ * @returns Object
+ */
 const itemCount = (itemsArray) => {
   const orderCount = {};
 
