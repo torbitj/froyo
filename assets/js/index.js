@@ -55,6 +55,10 @@ const displayOrderDetails = (orderObj) => {
   }
 }
 
+/**
+ * Main method that takes in a user prompt and logs the user input
+ * in the console
+ */
 const main = () => {
   // Take user order through prompt
   const order = prompt(`What flavors of ice cream would you like to order?`);
@@ -66,4 +70,5 @@ const main = () => {
   displayOrderDetails(orderObject);
 }
 
+// Call main method
 main();
