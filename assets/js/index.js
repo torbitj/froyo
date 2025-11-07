@@ -32,6 +32,6 @@ const displayOrderDetails = (orderObj) => {
   for (flavor in orderObj) {
     const flavorName = flavor;
     const numOfFlavor = orderObj[flavor];
-    console.log(`${flavorName} - ${numOfFlavor}`);
+    console.log(`${flavorName}:  ${numOfFlavor}`);
   }
 }
