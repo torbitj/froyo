@@ -1,4 +1,25 @@
 /**
+ * Check if key already exists in an object
+ * @param {object} object 
+ * @param {string} keyRef 
+ * @returns boolean 
+ */
+const keyChecker = (object, keyRef) => {
+  // Initialize boolean variable
+  let isKey = false;
+  // Loop through object keys
+  for (key in object) {
+    // If key is found in object, return true. Otherwise
+    // return false
+    if (key === keyRef) {
+      isKey = true;
+      return isKey;
+    }
+  }
+  return isKey;
+}
+
+/**
  * Take in an array, count like names and create object of
  * names as keys and values as the counts
  * @param {array} itemsArray 
@@ -11,26 +32,23 @@ const itemCount = (itemsArray) => {
   // Loop through the array
   for (let i = 0; i < itemsArray.length; i++) {
     // Store current item in array
-    const currentItem = itemsArray[i];
+    const currentFlavor = itemsArray[i];
     // Determine if the object is empty
     if (Object.keys(orderCount).length === 0) {
-      orderCount[currentItem] = 1;
+      orderCount[currentFlavor] = 1;
     }
     // If not empty, check keys and values
     else {
-      // Loop through the keys
-      for (item in orderCount) {
-        // Check if the current item in array matches a key
-        // If it does, increase value for that key
-        if (currentItem === item) {
-          let currentItemCount = orderCount[item];
-          currentItemCount += 1;
-          orderCount[item] = currentItemCount;
-        }
-        // If item does not match, create new key and set value to 1
-        else {
-          orderCount[currentItem] = 1;
-        }
+      // Check if current flavor is already a key
+      const isCurrentFlavor = keyChecker(orderCount, currentFlavor);
+      // Increase flavor value if already a key or create new key value
+      // pairing in the object
+      if (isCurrentFlavor === true) {
+        let currentFlavorCount = orderCount[currentFlavor];
+        currentFlavorCount += 1;
+        orderCount[currentFlavor] = currentFlavorCount;
+      } else {
+        orderCount[currentFlavor] = 1;
       }
     }
   }
