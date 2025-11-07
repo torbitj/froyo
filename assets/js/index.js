@@ -7,6 +7,15 @@ const itemCount = (itemsArray) => {
   const orderCount = {};
 
   for (let i = 0; i < itemsArray.length; i++) {
-    
+    const currentItem = itemsArray[i];
+    for (item in orderCount) {
+      if (currentItem === item) {
+        orderCount[item] += 1;
+      }
+      else {
+        orderCount.item = 0;
+      }
+    }
   }
+  
 }
