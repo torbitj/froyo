@@ -2,11 +2,15 @@
  * Check if key already exists in an object
  * @param {object} object 
  * @param {string} keyRef 
- * @returns 
+ * @returns boolean 
  */
 const keyChecker = (object, keyRef) => {
+  // Initialize boolean variable
   let isKey = false;
+  // Loop through object keys
   for (key in object) {
+    // If key is found in object, return true. Otherwise
+    // return false
     if (key === keyRef) {
       isKey = true;
       return isKey;
