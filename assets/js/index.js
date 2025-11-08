@@ -83,9 +83,9 @@ const main = () => {
   // Turn prompt into an array
   const orderItems = order.split(`,`);
   // Turn input into object with item counts as values
-  const orderObject = itemCount(orderItems);
+  const orderSummary = itemCount(orderItems);
   // Display order details in the console
-  displayOrderDetails(orderObject);
+  displayOrderDetails(orderSummary);
 }
 
 // Call main method
