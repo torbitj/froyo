@@ -2,7 +2,7 @@
  * Check if key already exists in an object
  * @param {object} object 
  * @param {string} keyRef 
- * @returns boolean 
+ * @returns {boolean} 
  */
 const keyChecker = (object, keyRef) => {
   // Initialize boolean variable
@@ -23,7 +23,7 @@ const keyChecker = (object, keyRef) => {
  * Take in an array, count like names and create object of
  * names as keys and values as the counts
  * @param {array} itemsArray 
- * @returns Object
+ * @returns {object}
  */
 const itemCount = (itemsArray) => {
   // Create an empty object
