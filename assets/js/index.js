@@ -33,23 +33,16 @@ const itemCount = (itemsArray) => {
   for (let i = 0; i < itemsArray.length; i++) {
     // Store current item in array
     const currentFlavor = itemsArray[i];
-    // Determine if the object is empty
-    if (Object.keys(orderCount).length === 0) {
+    // Check if current flavor is already a key
+    const isCurrentFlavor = keyChecker(orderCount, currentFlavor);
+    // Increase flavor value if already a key or create new key value
+    // pairing in the object
+    if (isCurrentFlavor === true) {
+      let currentFlavorCount = orderCount[currentFlavor];
+      currentFlavorCount += 1;
+      orderCount[currentFlavor] = currentFlavorCount;
+    } else {
       orderCount[currentFlavor] = 1;
-    }
-    // If not empty, check keys and values
-    else {
-      // Check if current flavor is already a key
-      const isCurrentFlavor = keyChecker(orderCount, currentFlavor);
-      // Increase flavor value if already a key or create new key value
-      // pairing in the object
-      if (isCurrentFlavor === true) {
-        let currentFlavorCount = orderCount[currentFlavor];
-        currentFlavorCount += 1;
-        orderCount[currentFlavor] = currentFlavorCount;
-      } else {
-        orderCount[currentFlavor] = 1;
-      }
     }
   }
   // Return the order object
